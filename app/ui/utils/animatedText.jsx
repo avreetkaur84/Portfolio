@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 
 const quote = {
   initial: {
@@ -29,6 +28,7 @@ const AnimatedText = ({text, classname=""}) => {
             )
           }
         </h1>
+
     </div>
   )
 }

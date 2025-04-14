@@ -11,7 +11,7 @@ const CustomLink = ({ href, title, className = "" }) => {
     // console.log(pathname);
 
     return (
-        <Link href={href} className={`${className} relative group`}>
+        <Link href={href} className={`${className} text-lg relative group`}>
             {title}
             <span className={`h-[1px] bg-black inline-block absolute left-0 -bottom-0.5
             group-hover:w-full transition-[width] ease duration-300
@@ -38,7 +38,7 @@ const Navbar = () => {
                 <motion.a href="https://github.com/avreetkaur84" target={"_blank"}
                     whileHover={{y:-3}}
                     whileTap={{scale: 0.9}}
-                    className='w-6 mr-5'
+                    className='w-7 mr-5'
                 >
                     <GithubIcon />
                 </motion.a>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <motion.a href="https://www.linkedin.com/in/avreet-kaur" target={"_blank"}
                     whileHover={{y:-3}}
                     whileTap={{scale: 0.9}}
-                    className='w-6 mx-5'
+                    className='w-7 mx-5'
                 > 
                     <LinkedInIcon /> 
                 </motion.a>
@@ -54,7 +54,7 @@ const Navbar = () => {
                 <motion.a href="https://x.com/Avreet__Kaur" target={"_blank"}
                     whileHover={{y:-3}}
                     whileTap={{scale: 0.9}}
-                    className='w-6 mx-5'
+                    className='w-7 mx-5'
                 > 
                     <TwitterIcon /> 
                 </motion.a>
