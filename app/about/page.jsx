@@ -8,6 +8,8 @@ import LayoutUI from "../ui/layoutUI";
 import pic from "../../public/images/profile/avi-7.jpeg"
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
+import Skills from "../ui/about/skills";
+import Education from "../ui/about/education";
 
 const AnimatedNumbers = ({ value }) => {
     const ref = useRef(null);
@@ -88,6 +90,9 @@ function About() {
                             </div>
                         </div>
                     </div>
+
+                    <Skills/>
+                    <Education />
                 </LayoutUI>
             </main>
         </>
