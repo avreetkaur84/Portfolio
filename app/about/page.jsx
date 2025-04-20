@@ -1,6 +1,5 @@
 "use client"
 import Head from "next/head";
-import styles from "./about.module.css"
 import { motion, spring, useInView, useMotionValue, useSpring } from "framer-motion";
 import AnimatedText from "../ui/utils/animatedText";
 import LayoutUI from "../ui/layoutUI";

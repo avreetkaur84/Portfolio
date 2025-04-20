@@ -3,8 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 import Logo from '../../utils/logo'
 import { usePathname } from 'next/navigation'
-import { GithubIcon, Gmail, LinkedInIcon, TwitterIcon } from '../../utils/icons'
+import { GithubIcon, Gmail, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from '../../utils/icons'
 import { motion } from 'framer-motion'
+import useThemeSwitcher from '@/app/hooks/useThemeSwitcher'
 
 const CustomLink = ({ href, title, className = "" }) => {
     const pathname = usePathname();
@@ -14,7 +15,7 @@ const CustomLink = ({ href, title, className = "" }) => {
         <Link href={href} className={`${className} text-lg relative group`}>
             {title}
             <span className={`h-[1px] bg-black inline-block absolute left-0 -bottom-0.5
-            group-hover:w-full transition-[width] ease duration-300
+            group-hover:w-full transition-[width] ease duration-300 dark:bg-light 
             ${pathname == href ? "w-full" : "w-0"}
             `}>
                 &nbsp;
@@ -24,8 +25,10 @@ const CustomLink = ({ href, title, className = "" }) => {
 }
 
 const Navbar = () => {
+    const [mode, setMode] = useThemeSwitcher();
+
     return (
-        <header className='border-2 w-full px-32 py-8 font-medium flex items-center justify-between'>
+        <header className='border-2 w-full px-32 py-8 font-medium flex items-center justify-between  '>
             <nav>
                 <CustomLink href="/" title="Home" className='mr-4' />
                 <CustomLink href="/about" title="About" className='m-4' />
@@ -59,13 +62,16 @@ const Navbar = () => {
                     <TwitterIcon /> 
                 </motion.a>
 
-                {/* <motion.a href="https://x.com/Avreet__Kaur" target={"_blank"}
-                    whileHover={{y:-3}}
-                    whileTap={{scale: 0.9}}
-                    className='w-6 ml-5'
-                > 
-                    <Gmail/>
-                </motion.a> */}
+                <button
+                className='ml-3 flex items-center justify-center'
+                    onClick={() => setMode(mode==="light" ? "dark" : "light")}
+                >
+                    {
+                        mode==="dark" ?
+                        <SunIcon className={"fill-dark"} /> :
+                        <MoonIcon className={"fill-dark"} />
+                    }
+                </button>
 
             </nav>
 

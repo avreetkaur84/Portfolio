@@ -31,7 +31,7 @@ export default function Home() {
                 <LinkArrow className="ml-1 w-6" />
               </Link>
               <Link href="mailto:avreetkaur084@gmail.com"
-                className="ml-5 font-medium capitalize text-dark text-xl underline"
+                className="ml-5 font-medium capitalize text-dark text-xl underline dark:text-light"
               >
                 Contact
               </Link>
